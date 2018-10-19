@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Matching Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="stylesheet prefetch" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <div id="leaderboard">
+            <section id="leaderboard-heading">
+                <h1 id="game-name">MATCHING GAME</h1>
+                <h2 id="player-name">PLAYER: </h2>
+            </section>
+        
+            <div id="leaderboard-body" class="score-panel">
+                <div id="stars-area">
+                    <label id="stars-text">Rating:</label>
+                    <span class="stars" title="rating">
+                            <i class="fa fa-star rating"></i>
+                            <i class="fa fa-star rating"></i>
+                            <i class="fa fa-star rating"></i>
+                    </span>
+                </div>
+
+                <div id="timer-area">
+                    <label id="timer-text">Timer:</label>
+                    <span class="timer"></span>
+                </div>
+
+                <div id="moves-area">
+                    <label id="moves-text">Moves:</label>
+                    <span class="moves"></span>
+                </div>
+
+                <div class="restart" title="reload">
+                    <label id="restart-text">Restart:</label>
+                    <i class="fa fa-repeat"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

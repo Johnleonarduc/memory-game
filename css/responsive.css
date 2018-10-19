@@ -1,0 +1,96 @@
+/**
+There are 3 major breakpoints used here with one minor breakpoints to adjust some items.
+Major breakpoint happens at screen sizes:
+1. Below 430px,
+2. Between 431px to 699px  (minor breakpoints at: 520px),
+3. Above 700px.
+**/
+
+/* Major Breakpoint for screens greater than 700px */
+@media screen and (min-width: 700px) {
+    h1 {
+        font-weight: 300;
+    }
+
+    .deck {
+        width: 660px;
+        min-height: 680px;
+        padding: 32px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 125px;
+        width: 125px;
+        border-radius: 8px;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    }
+
+}
+
+/* Major breakpoint for screens between 431px and 699px */
+@media screen and (min-width: 431px) and (max-width: 699px){
+
+    h1 {
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
+    .deck {
+        width: 420px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 80px;
+        width: 80px;
+        border-radius: 8px;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 3px 3px 3px 3px;
+    }
+
+}
+
+/* Minor breakpoint for screens between 520px and 699px*/
+@media screen and (min-width: 520px) and (max-width: 699px){
+    .deck {
+        width: 500px;
+        padding: 25px;
+    }
+
+    .deck .card {
+        height: 90px;
+        width: 90px;
+        margin: 5px 5px 5px 5px;
+    }
+}
+
+/* Major breakpoint for screens below 430px */
+@media screen and (max-width: 430px) {
+    h1 {
+        font-weight: 300;
+        margin-bottom: 0;
+    }
+
+    .deck {
+        width: 300px;
+        padding: 8px;
+        border-radius: 10px;
+        box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 0 0 3em;
+    }
+
+    .deck .card {
+        height: 65px;
+        width: 65px;
+        border-radius: 8px;
+        box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 3px 3px 3px 3px;
+    }
+
+}
