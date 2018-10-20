@@ -14,7 +14,7 @@ Major breakpoint happens at screen sizes:
 
     .deck {
         width: 660px;
-        min-height: 680px;
+        min-height: 400px;
         padding: 32px;
         border-radius: 10px;
         box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -26,6 +26,11 @@ Major breakpoint happens at screen sizes:
         width: 125px;
         border-radius: 8px;
         box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+        margin: 10px 15px 5px 5px;
+    }
+
+    #leaderboard {
+        width: 660px;
     }
 
 }
@@ -54,6 +59,142 @@ Major breakpoint happens at screen sizes:
         margin: 3px 3px 3px 3px;
     }
 
+    #leaderboard {
+        width: 420px;
+    }
+    #leaderboard-heading {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #game-name {
+        font-size: 1.5em;
+        padding-top: 10px;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #player-name {
+        font-size: 1.2em;
+        margin-top: 5px;
+        padding-left: 20px;
+        width: 100%;
+        height: 10px;
+        text-align: left;
+    }
+    
+    #stars-area {
+        padding-left: 5px; 
+    }
+    
+    #timer-area {
+        padding-left: 5px;
+    }
+    
+    #moves-area {
+        padding-left: 5px;
+    }
+    
+    .restart {
+        padding-left: 5px; 
+    }
+
+    #stars-area .stars {
+        margin: 0 2px 0 0;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin-top: 3%;
+    }
+
+    .modal-header {
+        height: 100%;
+        font-size: .7em;
+    }
+    
+    .modal-body {
+        height: 220px;
+    }
+
+    .modal-body-area-toStart {
+        display: block;
+    }
+
+    .form-area {
+        margin-top: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .play-buttton-Area {
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .fa-gamepad {
+        font-size: 3em;
+        margin-bottom: 5px;
+    }
+    
+    .play-text {
+        margin-left: 0;
+    }
+
+    .game-instructions {
+        font-size: 1em;
+    }
+
+    .copy-right{
+        font-size: .7em;
+        margin-top: 5px;
+    }
+
+    .text-area{
+        width: 100%;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .modal-body-area-win{
+        display: flex;
+        height: 220px;
+    }
+    
+    .result-scores-area{
+        width: 70%;
+        margin-top: 5px;
+    }
+    
+    .trophy-area{
+        width: 30%;
+    }
+    
+    .you-won-mesage{
+        font-size: 1.5em;
+    }
+    
+    .result-message{
+        font-size: 1em;
+    }
+    
+    p {
+        line-height: 20px;
+    }
+
+    .trophy-area{
+        background-image :url('../img/trophy.gif');
+        background-position: center;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .play-again{
+        font-size: 1em;
+    }
 }
 
 /* Minor breakpoint for screens between 520px and 699px*/
@@ -68,13 +209,16 @@ Major breakpoint happens at screen sizes:
         width: 90px;
         margin: 5px 5px 5px 5px;
     }
+    
+    #leaderboard {
+        width: 500px;
+    }
 }
 
 /* Major breakpoint for screens below 430px */
 @media screen and (max-width: 430px) {
     h1 {
         font-weight: 300;
-        margin-bottom: 0;
     }
 
     .deck {
@@ -93,4 +237,153 @@ Major breakpoint happens at screen sizes:
         margin: 3px 3px 3px 3px;
     }
 
+    #leaderboard {
+        width: 300px;
+    }
+
+    #leaderboard-heading {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    
+    #game-name {
+        font-size: 1.5em;
+        padding-top: 10px;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #player-name {
+        font-size: 1.2em;
+        margin-top: 5px;
+        padding-left: 20px;
+        width: 100%;
+        height: 10px;
+        text-align: left;
+    }
+    
+    #stars-area {
+        padding-left: 5px; 
+    }
+    
+    #timer-area {
+        padding-left: 5px;
+    }
+    
+    #moves-area {
+        padding-left: 5px;
+    }
+    
+    .restart {
+        padding-left: 5px; 
+    }
+
+    #stars-area .stars {
+        margin: 0 2px 0 0;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin-top: 3%;
+    }
+
+    .modal-header {
+        height: 100%;
+        font-size: .7em;
+    }
+    
+    .modal-body {
+        height: 220px;
+    }
+
+    .modal-body-area-toStart {
+        display: block;
+    }
+
+    .form-area {
+        margin-top: 5px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .play-buttton-Area {
+        margin-top: 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .fa-gamepad {
+        font-size: 3em;
+        margin-bottom: 5px;
+    }
+    
+    .play-text {
+        margin-left: 0;
+    }
+
+    .game-instructions {
+        font-size: 1em;
+    }
+
+    .copy-right{
+        font-size: .7em;
+        margin-top: 5px;
+    }
+
+    .text-area{
+        width: 100%;
+        height: 50px;
+        font-size: 1.5em;
+    }
+
+    .modal-body-area-win{
+        display: flex;
+        height: 220px;
+    }
+    
+    .result-scores-area{
+        width: 70%;
+        margin-top: 5px;
+    }
+    
+    .trophy-area{
+        background-position: center;
+        width: 200px;
+        height: 200px;
+        margin-top: 10px;
+    }
+    
+    .you-won-mesage{
+        font-size: 1.5em;
+    }
+    
+    .result-message{
+        font-size: 1em;
+    }
+    
+    p {
+        line-height: 20px;
+    }
+    
+    .play-again{
+        font-size: 1em;
+    }
+}
+/* Minor breakpoint for screens below 320px */
+@media screen and (max-width: 320px) {
+    .modal-body-area-win{
+        height: 250px;
+    }
+
+    .trophy-area{
+        width: 200px;
+        height: 200px;
+        margin-top: 5px;
+    }
+    .you-won-mesage{
+        line-height: 0;
+        margin-top: 7px;
+    }
 }
