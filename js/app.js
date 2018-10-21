@@ -1,4 +1,31 @@
-
+/*Enable Local Storage across all browsers that does not support it yet 
+Credit: https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage*/
+if (!window.localStorage) {
+    window.localStorage = {
+      getItem: function (sKey) {
+        if (!sKey || !this.hasOwnProperty(sKey)) { return null; }
+        return unescape(document.cookie.replace(new RegExp("(?:^|.*;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*((?:[^;](?!;))*[^;]?).*"), "$1"));
+      },
+      key: function (nKeyId) {
+        return unescape(document.cookie.replace(/\s*\=(?:.(?!;))*$/, "").split(/\s*\=(?:[^;](?!;))*[^;]?;\s*/)[nKeyId]);
+      },
+      setItem: function (sKey, sValue) {
+        if(!sKey) { return; }
+        document.cookie = escape(sKey) + "=" + escape(sValue) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+        this.length = document.cookie.match(/\=/g).length;
+      },
+      length: 0,
+      removeItem: function (sKey) {
+        if (!sKey || !this.hasOwnProperty(sKey)) { return; }
+        document.cookie = escape(sKey) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+        this.length--;
+      },
+      hasOwnProperty: function (sKey) {
+        return (new RegExp("(?:^|;\\s*)" + escape(sKey).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=")).test(document.cookie);
+      }
+    };
+    window.localStorage.length = (document.cookie.match(/\=/g) || window.localStorage).length;
+  }
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -69,6 +96,7 @@ function makeModalStruct(){
         
         let nameInputEl = document.createElement('input');
         nameInputEl.setAttribute("type", "text");
+        nameInputEl.setAttribute("maxlength", "10");
         nameInputEl.setAttribute("name", "player");
         nameInputEl.setAttribute("class", "text-area");
         nameInputEl.setAttribute("placeholder", "Your Name Here");
@@ -88,19 +116,20 @@ function makeModalStruct(){
 
         let playButttonArea = document.createElement('div');
         playButttonArea.setAttribute("class", "play-buttton-Area");
-        playButttonArea.addEventListener('click', function(){
-            inputProcessor();
-        });
-        playButttonArea.addEventListener('mouseenter', function(){
-            document.querySelector('.fa-gamepad').classList.remove('fa-spin');
-        });
-        playButttonArea.addEventListener('mouseleave', function(){
-            document.querySelector('.fa-gamepad').classList.add('fa-spin');
-        });
-
 
         let gamePadImg = document.createElement('i');
         gamePadImg.setAttribute("class", "fas fa-gamepad icon-large fa-spin");
+        
+        gamePadImg.addEventListener('click', function(){
+            inputProcessor();
+        });
+        gamePadImg.addEventListener('mouseenter', function(){
+            document.querySelector('.fa-gamepad').classList.remove('fa-spin');
+        });
+        gamePadImg.addEventListener('mouseleave', function(){
+            document.querySelector('.fa-gamepad').classList.add('fa-spin');
+        });
+
         playButttonArea.appendChild(gamePadImg);
 
         let brText = document.createElement('br');
@@ -137,7 +166,7 @@ function makeModalStruct(){
 
         let timeExhaustedMessage = document.createElement('p');
         nmovesMessage.setAttribute("class", "result-message");
-        timeExhaustedMessage.innerHTML = `You Exhausted ${strnMins}:${strnSecs}`;
+        timeExhaustedMessage.innerHTML = `Time Exhausted ${strnMins}:${strnSecs}`;
 
 
         let trophyArea = document.createElement('div');
@@ -208,12 +237,14 @@ function inputProcessor(){
             let redTexfield = document.querySelector('.text-area');
             redTexfield.classList.add('red-border');
             redTexfield.classList.add('shake');
+            document.querySelector("input").focus();
         }else{
             let getModalContainer = document.querySelector('.modal-container');
             document.body.removeChild(getModalContainer);
             gameStart();
         }
 }
+
 function makeInstructions(){
     let instructionsCard = document.createElement('section');
 
@@ -330,7 +361,8 @@ let counter = 0;
 var timerId;
 localStorage.setItem("instructionState", 1);
 localStorage.setItem("rating", "3/3 - Professional");
-
+let strnMins ="";
+let strnSecs ="";
 
 makeModalStruct();
 makeCardDeck();
@@ -338,6 +370,7 @@ makeCardDeck();
 function callTimer(){
     timerId = setInterval(upcounter, 1000);
 }
+
 
 function dispTimer(){
     strnSecs = (localStorage.seconds < 10) ? `0${localStorage.seconds.toString()}` : localStorage.seconds.toString();
@@ -438,6 +471,8 @@ function resetGame(){
     callTimer();
 }
 
+document.querySelector("input").focus();
+
 document.querySelector('.container').addEventListener('click', function(e){
     //If a card is clicked:
     if(e.target.className === 'card'){
@@ -464,9 +499,8 @@ document.querySelector('.container').addEventListener('click', function(e){
                 localStorage.gameState = 'win';
                 setTimeout(function(){
                     makeModalStruct();
+                    clearTimer();
                 }, 1000);
-
-                clearTimer();
             }
         };
     //if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
