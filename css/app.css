@@ -156,6 +156,7 @@ h2{
 }
 
 /* The Modal (background) */
+/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
 .modal-container {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -170,6 +171,7 @@ h2{
 }
 
 /* Modal Content */
+/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
 .modal-content {
     position: relative;
     vertical-align: middle;
@@ -186,11 +188,12 @@ h2{
 }
 
 /* Add Animation */
+/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
 }
-
+/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
 @keyframes animatetop {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
@@ -319,6 +322,7 @@ h2{
     border-width: 5px;
 }
 
+/* Credit: https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
 .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
