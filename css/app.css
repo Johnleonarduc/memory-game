@@ -1,3 +1,4 @@
+/*General Styles*/
 html {
     box-sizing: border-box;
 }
@@ -17,25 +18,25 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    background: #ffffff url(../img/geometry2.png); /* Background pattern from Subtle Patterns */
+    font-family: "Coda", cursive;
 }
 
+
+h1,
+h2{
+    font-family: "Open Sans", sans-serif;
+}
+
+/*
+ * Styles for Game Deck
+ */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-
-h1,
-h2{
-    font-family: 'Open Sans', sans-serif;
-}
-
-/*
- * Styles for the deck of cards
- */
 
 .deck {
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
@@ -74,11 +75,9 @@ h2{
 /*
  * Styles for the Leaderboard
  */
-
 #leaderboard {
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
-    width: 80%;
     margin-top: 20px;
     margin-bottom: 10px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
@@ -155,8 +154,9 @@ h2{
     cursor: pointer;
 }
 
-/* The Modal (background) */
-/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
+/*
+The Modal (background)
+*/
 .modal-container {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -170,12 +170,13 @@ h2{
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content */
-/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
+/*
+Modal Content
+*/
 .modal-content {
     position: relative;
     vertical-align: middle;
-    background:#ffffff url('../img/geometry2.png');
+    background:#ffffff url(../img/geometry2.png);
     margin: auto;
     padding: 0;
     border: 1px solid #888;
@@ -184,19 +185,7 @@ h2{
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-/* Credit: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal2 */
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
+    animation-duration: 0.4s;
 }
 
 .modal-header {
@@ -209,16 +198,6 @@ h2{
     padding: 2px 16px;
 }
 
-.modal-body-area-toStart{
-    display: flex;
-    height: 130px;
-}
-
-.modal-body-area-win{
-    display: flex;
-    height: 220px;
-}
-
 .modal-footer {
     height: 30px;
     padding: 2px 16px;
@@ -226,15 +205,28 @@ h2{
     color: white;
 }
 
-.name-text .text-area{
+/*
+To Start Game Modal Styles
+*/
+.modal-body-area-to-start {
+    display: flex;
+    height: 130px;
+}
+
+.form-area {
+    margin: 10px, 0;
+    width: 80%;
+}
+
+.name-text .text-area {
     padding: 15px;    
 }
 
-.name-text{
+.name-text {
     font-size: 1.3em;
 }
 
-.text-area{
+.text-area {
     width: 80%;
     height: 50px;
     border-color: #02b3e4;
@@ -242,79 +234,90 @@ h2{
     margin-bottom: 20px;
 }
 
-.result-scores-area{
-    width: 60%;
-}
-
-.trophy-area{
-    width: 40%;
-}
-
-.you-won-mesage{
-    font-size: 1.7em;
-}
-
-.result-message{
-    font-size: 1.2em;
-}
-
-.trophy-area{
-    background-image :url('../img/trophy.gif');
-    width: 220px;
-    height: 220px;
-}
-
-.game-instructions{
-    color: white;
-    font-size: 1.2em;
-}
-
-.play-again{
-    color: white;
-    font-size: 1.2em;
-}
-
-.instructions-card{
-    margin-top: 0;
-    background:#ffffff url('../img/geometry2.png');
-}
-
-.instructions-txt{
-    color: black;
-    font-size: 1em;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.form-area{
-    margin-top: 10px;
-    width: 80%;
-}
-
-.play-buttton-Area{
-    margin-top: 10px;
-    margin-bottom: 10px;
+.play-buttton-Area {
+    padding-top: 20px;
+    margin: 10px, 0, 10px, 0;
     float: right;
     width: 20%;
    cursor: pointer;
 }
 
-.fa-gamepad{
+.fa-gamepad {
     font-size: 4em;
     color: #2e3d49;
 }
 
-.play-text{
+.play-text {
     font-size: 1.2em;
     margin-left: 20px;
 }
 
-.copy-right{
+/*
+Win Modal Styles
+*/
+.modal-body-area-win {
+    display: flex;
+    height: 220px;
+}
+
+.you-won-mesage {
+    font-size: 1.7em;
+}
+
+.result-scores-area {
+    width: 60%;
+}
+
+.result-message {
+    font-size: 1.2em;
+}
+
+.trophy-area {
+    width: 40%;
+    background-image :url(../img/trophy.gif);
+    width: 220px;
+    height: 220px;
+}
+
+/*
+Modal Footer Styles
+*/
+.game-instructions {
+    color: white;
+    font-size: 1.2em;
+}
+
+.instructions-card {
+    margin-top: 0;
+    background:#ffffff url(../img/geometry2.png);
+}
+
+.instructions-txt {
+    color: black;
+    font-size: 1em;
+    margin: 0, 10px, 0, 10px;
+}
+
+.play-again {
+    color: white;
+    font-size: 1.2em;
+}
+
+.copy-right {
     float: right;
 }
 
-.remove{
-    display: none;
+/*
+Other Animations and Features
+*/
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
 }
 
 .red-border{
@@ -322,7 +325,6 @@ h2{
     border-width: 5px;
 }
 
-/* Credit: https://css-tricks.com/snippets/css/shake-css-keyframe-animation/ */
 .shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0);
