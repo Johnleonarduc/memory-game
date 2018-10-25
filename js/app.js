@@ -68,16 +68,8 @@ function shuffle(cards) {
  */
 function makeCardDeck(){
     //Create array to hold the 8 card pairs.
-    const cards = [
-        "fa-diamond", "fa-diamond",
-        "fa-paper-plane-o", "fa-paper-plane-o",
-        "fa-anchor", "fa-anchor",
-        "fa-bolt", "fa-bolt",
-        "fa-cube", "fa-cube",
-        "fa-leaf", "fa-leaf",
-        "fa-bicycle", "fa-bicycle",
-        "fa-bomb", "fa-bomb"
-    ];
+    const cardlist = ["fa-diamond", "fa-paper-plane-o", "fa-anchor", "fa-bolt", "fa-cube", "fa-leaf", "fa-bicycle", "fa-bomb"];
+    const cards = cardlist.concat(cardlist); //duplicate array of 8 cards
     //create the <ul> element
     let cardDeck = document.createElement('ul');
     //assign classname to the <ul> element
