@@ -36,7 +36,7 @@ let counter = 0;
 let gameTimer = document.querySelector('.timer');
 let strnMins ="";
 let strnSecs ="";
-var timerId; //did not work with either const or let, so I used var
+let timerId; //did not work with either const or let, so I used var
 //Using local Storage to initialize values for the game
 localStorage.setItem("openCard", "card open show"); //initialize value for an open card
 localStorage.setItem("closeCard", "card"); //initialize value for a closed card
