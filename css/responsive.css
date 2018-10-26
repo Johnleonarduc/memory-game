@@ -32,7 +32,20 @@ Major breakpoint happens at screen sizes:
     #leaderboard {
         width: 660px;
     }
+    
+    .modal-body-area-to-start {
+        display: flex;
+    }
+    
+    .text-area {
+        width: 80%;
+        height: 50px;
+    }
 
+    .play-buttton-Area {
+        float: right;
+        width: 20%;
+    }
 }
 
 /* Major breakpoint for screens between 431px and 699px */
