@@ -208,11 +208,6 @@ Modal Content
 /*
 To Start Game Modal Styles
 */
-.modal-body-area-to-start {
-    display: flex;
-    height: 130px;
-}
-
 .form-area {
     margin: 10px, 0;
     width: 80%;
@@ -227,8 +222,6 @@ To Start Game Modal Styles
 }
 
 .text-area {
-    width: 80%;
-    height: 50px;
     border-color: #02b3e4;
     font-size: 1.5em;
     margin-bottom: 20px;
@@ -237,8 +230,6 @@ To Start Game Modal Styles
 .play-buttton-Area {
     padding-top: 20px;
     margin: 10px, 0, 10px, 0;
-    float: right;
-    width: 20%;
    cursor: pointer;
 }
 
