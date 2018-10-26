@@ -345,7 +345,7 @@ Major breakpoint happens at screen sizes:
     }
 
     .game-instructions {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .copy-right{
@@ -412,5 +412,12 @@ Major breakpoint happens at screen sizes:
     .you-won-mesage{
         line-height: 0;
         margin-top: 7px;
+    }
+    .game-instructions {
+        font-size: 0.7em;
+    }
+
+    .copy-right{
+        font-size: .5em;
     }
 }
